@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ranking FaceGame</title>
+    <style>
+        body{background:#111;color:white;text-align:center;font-family:Arial;}
+        h1{color:#00ffcc;}
+        .card{background:#222;margin:15px auto;padding:15px;width:400px;border-radius:10px;box-shadow:0 0 10px #00ffcc44;}
+        img{width:120px;border-radius:10px;}
+        .score{font-size:24px;color:#00ffcc;}
+        .gold{color:gold;}
+        .silver{color:silver;}
+        .bronze{color:#cd7f32;}
+    </style>
+</head>
+<body>
+<h1>🏆 Ranking FaceGame</h1>
+
+{% for jogador in dados %}
+<div class="card">
+    <h2>
+        {% if loop.index == 1 %}<span class="gold">🥇 1º Lugar</span>
+        {% elif loop.index == 2 %}<span class="silver">🥈 2º Lugar</span>
+        {% elif loop.index == 3 %}<span class="bronze">🥉 3º Lugar</span>
+        {% else %}{{ loop.index }}º Lugar{% endif %}
+    </h2>
+    <img src="{{ url_for('static', filename='processed/' + jogador[1]) }}">
+    <div class="score">Pontuação: {{ jogador[2] }}/10</div>
+    <div class="nome">Nome: {{ jogador[0] }}</div>
+</div>
+{% endfor %}
+
+<br>
+<a href="/">⬅ Voltar</a>
+</body>
+</html>

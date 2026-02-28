@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analisando...</title>
+</head>
+<body style="text-align:center">
+<h1>Analizando o rosto de {{ nome }}...</h1>
+<img src="{{ url_for('static', filename='uploads/' + filename) }}" width="300"><br>
+<p>🔄 Aguarde alguns segundos...</p>
+<script>
+setTimeout(function(){
+    window.location.href = "/resultado/{{ filename }}?nome={{ nome }}";
+}, 2000); // 2 segundos
+</script>
+</body>
+</html>

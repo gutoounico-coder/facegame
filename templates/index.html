@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FaceGame</title>
+</head>
+<body>
+
+<h1>🎮 FaceGame</h1>
+
+<form action="/upload" method="post" enctype="multipart/form-data">
+
+    <label>Seu Nome:</label><br>
+    <input type="text" name="nome" placeholder="Digite seu nome"><br><br>
+
+    <input 
+        type="file"
+        name="file"
+        accept="image/*"
+        capture="environment"
+        required
+    ><br><br>
+
+    <button type="submit">Enviar Foto</button>
+
+</form>
+
+<br>
+<a href="/ranking">🏆 Ver Ranking</a>
+
+</body>
+</html>
