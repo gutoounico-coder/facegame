@@ -2,30 +2,40 @@
 <html>
 <head>
     <title>FaceGame</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
 <body>
+
+<div class="container">
 
 <h1>🎮 FaceGame</h1>
 
 <form action="/upload" method="post" enctype="multipart/form-data">
 
-    <label>Seu Nome:</label><br>
-    <input type="text" name="nome" placeholder="Digite seu nome"><br><br>
+<label>Seu Nome:</label>
+<input type="text" name="nome" placeholder="Digite seu nome" required>
 
-    <input 
-        type="file"
-        name="file"
-        accept="image/*"
-        capture="environment"
-        required
-    ><br><br>
+<input 
+type="file"
+name="file"
+accept="image/*"
+capture="environment"
+required>
 
-    <button type="submit">Enviar Foto</button>
+<button type="submit">Enviar Foto</button>
 
 </form>
 
 <br>
+
 <a href="/ranking">🏆 Ver Ranking</a>
+
+</div>
 
 </body>
 </html>

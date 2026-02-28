@@ -4,7 +4,12 @@ import cv2
 import sqlite3
 from werkzeug.utils import secure_filename
 
-app = Flask(__name__)
+app = Flask(__name__,
+            static_folder="static",
+            template_folder="templates")
+
+print("STATIC:", app.static_folder)
+print("TEMPLATE:", app.template_folder)
 
 # ===============================
 # CONFIGURAÇÕES
